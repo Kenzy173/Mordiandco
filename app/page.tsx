@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import ServiceIcon from "@/components/ServiceIcon";
+import AnimatedHero from "@/components/AnimatedHero";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   const services = [
@@ -15,29 +17,7 @@ export default function Home() {
   ];
   return (
     <>
-      <section className="relative isolate overflow-hidden animate-fade-in">
-        <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden>
-          <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full animate-float-slow animate-pulse-glow" style={{ background: "radial-gradient(closest-side, var(--color-brand), transparent)" }} />
-          <div className="absolute -left-40 top-40 h-80 w-80 rounded-full animate-float-slow" style={{ background: "radial-gradient(closest-side, var(--color-accent), transparent)", animationDelay: "-3s" }} />
-        </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-56 grid gap-10 md:grid-cols-2 items-center justify-items-center md:justify-items-start">
-          <div className="stagger text-center md:text-left">
-            <h1 className="hero-title font-black tracking-tight mt-2 animate-fade-in-up text-[color:var(--color-foreground)] md:whitespace-nowrap">
-              MORDI & CO
-            </h1>
-            <p className="mt-2 text-lg sm:text-2xl font-semibold animate-fade-in-up text-[color:var(--color-brand)] uppercase tracking-[0.3em] md:tracking-[0.6em]">
-              Solicitors
-            </p>
-            <div className="mt-8 flex gap-4 justify-center md:justify-start animate-fade-in-up">
-              <Link href="/contact" className="btn btn-primary">Do you need help?</Link>
-              <Link href="/services" className="btn btn-outline">Explore our services</Link>
-            </div>
-          </div>
-          <div className="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden border border-black/10 dark:border-white/15 animate-fade-in-up">
-            <Image src={`https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop`} alt="Law firm meeting" fill className="object-cover" priority />
-          </div>
-        </div>
-      </section>
+      <AnimatedHero />
 
       
       <section id="services">
@@ -45,21 +25,23 @@ export default function Home() {
           <p className="text-sm opacity-80 uppercase tracking-[0.2em]">Our Services</p>
           <h2 className="section-title mt-2">Let’s get you the right legal help</h2>
           <p className="mt-3 muted max-w-3xl mx-auto">From start-up advice to complex litigation, explore trending areas below or view all services.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
-            {services.slice(0,5).map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/15 px-5 py-3 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
-              >
-                <ServiceIcon name={s.title} plain />
-                <span>{s.title}</span>
+          <ScrollReveal>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-4">
+              {services.slice(0,5).map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/15 px-5 py-3 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10"
+                >
+                  <ServiceIcon name={s.title} plain />
+                  <span>{s.title}</span>
+                </Link>
+              ))}
+              <Link href="/services" className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold bg-[color:var(--color-foreground)] text-[color:var(--color-background)] hover:opacity-90">
+                <span>All services</span>
               </Link>
-            ))}
-            <Link href="/services" className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold bg-[color:var(--color-foreground)] text-[color:var(--color-background)] hover:opacity-90">
-              <span>All services</span>
-            </Link>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -119,24 +101,26 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-sm opacity-80">Why Choose Us</h2>
           <h2 className="section-title mt-2">Excellence in Legal Services</h2>
-          <div className="mt-12 md:mt-16 grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <h3 className="font-medium">Expertise and Experience</h3>
-              <p className="mt-2 muted">Our team has 200+ years&rsquo; combined experience providing diverse legal advice.</p>
+          <ScrollReveal>
+            <div className="mt-12 md:mt-16 grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
+              <div>
+                <h3 className="font-medium">Expertise and Experience</h3>
+                <p className="mt-2 muted">Our team has 200+ years&rsquo; combined experience providing diverse legal advice.</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Commitment to Excellence</h3>
+                <p className="mt-2 muted">We deliver exceptional legal services, striving for excellence in all we do.</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Tailored Solutions</h3>
+                <p className="mt-2 muted">We craft personalized solutions for each client&rsquo;s unique needs and circumstances.</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Professionalism and Integrity</h3>
+                <p className="mt-2 muted">We prioritize honesty, transparency, and accountability in all interactions.</p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-medium">Commitment to Excellence</h3>
-              <p className="mt-2 muted">We deliver exceptional legal services, striving for excellence in all we do.</p>
-            </div>
-            <div>
-              <h3 className="font-medium">Tailored Solutions</h3>
-              <p className="mt-2 muted">We craft personalized solutions for each client&rsquo;s unique needs and circumstances.</p>
-            </div>
-            <div>
-              <h3 className="font-medium">Professionalism and Integrity</h3>
-              <p className="mt-2 muted">We prioritize honesty, transparency, and accountability in all interactions.</p>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -146,16 +130,18 @@ export default function Home() {
 
       <section>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="card-elevated">
-              <h3 className="font-semibold">Our Vision</h3>
-              <p className="mt-3 muted">At Mordi and Co Solicitors, our vision is to provide first class legal services and to be recognized as a trusted leader in providing legal solutions.</p>
+          <ScrollReveal>
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="card-elevated">
+                <h3 className="font-semibold">Our Vision</h3>
+                <p className="mt-3 muted">At Mordi and Co Solicitors, our vision is to provide first class legal services and to be recognized as a trusted leader in providing legal solutions.</p>
+              </div>
+              <div className="card-elevated">
+                <h3 className="font-semibold">Our Mission</h3>
+                <p className="mt-3 muted">At Mordi and Co Solicitors, we strive to deliver exceptional legal services designed to meet the unique needs of our clients. Through our dedication to professionalism, innovation, and continuous learning, we aim to provide effective solutions, uphold the principles of justice, and foster long-lasting relationships built on trust and respect.</p>
+              </div>
             </div>
-            <div className="card-elevated">
-              <h3 className="font-semibold">Our Mission</h3>
-              <p className="mt-3 muted">At Mordi and Co Solicitors, we strive to deliver exceptional legal services designed to meet the unique needs of our clients. Through our dedication to professionalism, innovation, and continuous learning, we aim to provide effective solutions, uphold the principles of justice, and foster long-lasting relationships built on trust and respect.</p>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -164,13 +150,15 @@ export default function Home() {
       <section>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="section-title">Our Partnerships</h2>
-          <div className="mt-6 grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
-            {[1,2,3,4,5].map((i) => (
-              <div key={i} className="h-16 rounded-xl border border-black/10 dark:border-white/15 grid place-items-center text-sm opacity-80">
-                Partner Logo
-              </div>
-            ))}
-          </div>
+          <ScrollReveal y={12}>
+            <div className="mt-6 grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+              {[1,2,3,4,5].map((i) => (
+                <div key={i} className="h-16 rounded-xl border border-black/10 dark:border-white/15 grid place-items-center text-sm opacity-80">
+                  Partner Logo
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
