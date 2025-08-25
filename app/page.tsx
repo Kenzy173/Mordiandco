@@ -20,12 +20,12 @@ export default function Home() {
           <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full animate-float-slow animate-pulse-glow" style={{ background: "radial-gradient(closest-side, var(--color-brand), transparent)" }} />
           <div className="absolute -left-40 top-40 h-80 w-80 rounded-full animate-float-slow" style={{ background: "radial-gradient(closest-side, var(--color-accent), transparent)", animationDelay: "-3s" }} />
         </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-40 md:py-56 grid gap-10 md:grid-cols-2 place-items-center">
-          <div className="stagger text-center md:text-left mx-auto">
-            <h1 className="hero-title font-black tracking-tight mt-2 animate-fade-in-up text-[color:var(--color-foreground)] whitespace-nowrap">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-56 grid gap-10 md:grid-cols-2 items-center justify-items-center md:justify-items-start">
+          <div className="stagger text-center md:text-left">
+            <h1 className="hero-title font-black tracking-tight mt-2 animate-fade-in-up text-[color:var(--color-foreground)] md:whitespace-nowrap">
               MORDI & CO
             </h1>
-            <p className="mt-2 text-xl sm:text-2xl font-semibold animate-fade-in-up text-[color:var(--color-brand)] uppercase tracking-[0.6em]">
+            <p className="mt-2 text-lg sm:text-2xl font-semibold animate-fade-in-up text-[color:var(--color-brand)] uppercase tracking-[0.3em] md:tracking-[0.6em]">
               Solicitors
             </p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start animate-fade-in-up">
