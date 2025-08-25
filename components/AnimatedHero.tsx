@@ -2,20 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { gsap } from "./useGsap";
 import { useGsapRef } from "./useGsap";
 
 export default function AnimatedHero() {
   const rootRef = useGsapRef<HTMLDivElement>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!rootRef.current) return;
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.from(".hero-title", { y: 20, opacity: 0, duration: 0.6, ease: "power2.out" })
-        .from(".hero-sub", { y: 16, opacity: 0, duration: 0.5, ease: "power2.out" }, "-=0.3")
-        .from(".hero-ctas > *", { y: 14, opacity: 0, duration: 0.45, ease: "power2.out", stagger: 0.08 }, "-=0.25");
+      tl.from(".hero-title", { y: 20, opacity: 0, duration: 0.6, ease: "power2.out", immediateRender: false })
+        .from(".hero-sub", { y: 16, opacity: 0, duration: 0.5, ease: "power2.out", immediateRender: false }, "-=0.3")
+        .from(".hero-ctas > *", { y: 14, opacity: 0, duration: 0.45, ease: "power2.out", stagger: 0.08, immediateRender: false }, "-=0.25");
     }, rootRef);
     return () => ctx.revert();
   }, []);

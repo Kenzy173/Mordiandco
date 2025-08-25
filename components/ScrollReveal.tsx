@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { gsap, ScrollTrigger } from "./useGsap";
 import { useGsapRef } from "./useGsap";
 
@@ -15,7 +15,7 @@ type Props = {
 export default function ScrollReveal({ children, y = 20, duration = 0.6, delay = 0, stagger = 0.08 }: Props) {
   const ref = useGsapRef<HTMLDivElement>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!ref.current) return;
     const ctx = gsap.context(() => {
       gsap.from(ref.current!.children, {

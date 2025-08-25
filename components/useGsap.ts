@@ -11,6 +11,8 @@ export function useGsapRegister() {
     if (!registered) {
       gsap.registerPlugin(ScrollTrigger);
       registered = true;
+      // Prevent layout flashes: disable will-change after animations
+      gsap.defaults({ overwrite: "auto" });
     }
   }, []);
 }
