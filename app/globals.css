@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+ :root {
+  --background: #ffffff;
+  --foreground: #111111;
+
+  /* Type scale */
+  --fs-body: 17px;
+  --fs-body-md: 18px;
+  --fs-h1: 40px;
+  --fs-h1-md: 48px;
+  --fs-h2: 32px;
+  --fs-h2-md: 36px;
+  --fs-h3: 20px;
+  --fs-h3-md: 22px;
+
+  /* Tokens (moved from @theme inline) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-montserrat);
+
+  /* Brand */
+  --color-brand: #e6007e; /* vibrant magenta */
+  --color-brand-foreground: #ffffff;
+  --color-accent: #00b5ad; /* teal */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #FAFAFA;
+  }
+}
+
+/* Attribute-based theme override */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #FAFAFA;
+}
+
+/* Explicit light theme override */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+body { background: var(--background); color: var(--foreground); font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; font-size: var(--fs-body); }
+html, body { transition: background-color 200ms ease, color 200ms ease; }
+
+@media (min-width: 768px) { body { font-size: var(--fs-body-md); } }
+
+/* Muted utility helper */
+.muted { opacity: 0.9; }
+
+/* Override Tailwind's opacity-80 */
+:where(.opacity-80) { opacity: 0.92 !important; }
+
+/* Base typography */
+h1, h2, h3 { font-family: var(--font-display), var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; letter-spacing: -0.01em; }
+/* Default heading sizes (utilities like text-4xl may override) */
+h1 { font-size: var(--fs-h1); line-height: 1.2; }
+@media (min-width: 768px) { h1 { font-size: var(--fs-h1-md); } }
+h2 { font-size: var(--fs-h2); line-height: 1.25; }
+@media (min-width: 768px) { h2 { font-size: var(--fs-h2-md); } }
+h3 { font-size: var(--fs-h3); line-height: 1.35; }
+@media (min-width: 768px) { h3 { font-size: var(--fs-h3-md); } }
+/* Section heading sizing */
+.section-title { font-size: 28px; font-weight: 600; letter-spacing: -0.01em; }
+@media (min-width: 768px) { .section-title { font-size: 32px; } }
+
+/* Card grid helpers */
+.card-grid { display: grid; gap: 1.5rem; }
+@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .card-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Uniform card */
+.card-elevated { border: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent); border-radius: 1rem; padding: 1.25rem; background: color-mix(in oklab, var(--color-background) 96%, transparent); }
+
+/* Containers */
+.container { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .container { max-width: 80rem; } }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; border-radius: 9999px; padding: 0.75rem 1.25rem; font-size: 1rem; font-weight: 600; line-height: 1; }
+.btn-primary { background: var(--color-foreground); color: var(--color-background); }
+.btn-primary:hover { opacity: 0.9; }
+.btn-outline { border: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent); color: var(--color-foreground); }
+.btn-outline:hover { background: color-mix(in oklab, var(--color-foreground) 6%, transparent); }
+
+/* Form controls */
+.input, .textarea {
+  width: 100%;
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 15%, transparent);
+  background: color-mix(in oklab, var(--color-background) 98%, transparent);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--color-foreground) 25%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-foreground) 12%, transparent);
+}
+
+/* Sensible defaults for native form controls across the site */
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(.btn), textarea, select) {
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 15%, transparent);
+  background: color-mix(in oklab, var(--color-background) 98%, transparent);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(.btn), textarea, select):focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--color-foreground) 25%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-foreground) 12%, transparent);
+}
+
+/* Cards */
+.card { border: 1px solid color-mix(in oklab, var(--color-foreground) 12%, transparent); border-radius: 1rem; padding: 1.25rem; background: color-mix(in oklab, var(--color-background) 96%, transparent); }
+.card-hover { transition: background 150ms ease, transform 150ms ease; }
+.card-hover:hover { background: color-mix(in oklab, var(--color-foreground) 5%, var(--color-background)); transform: translateY(-1px); }
+
+/* Section accents */
+.section-muted { background: color-mix(in oklab, var(--color-foreground) 3%, transparent); border-top: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent); }
+
+/* Global borders for header/footer separators */
+.border-standard { border-color: color-mix(in oklab, var(--color-foreground) 10%, transparent) !important; }
+
+/* Header glass effect */
+.glass-header {
+  background-color: color-mix(in oklab, var(--color-background) 65%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+  box-shadow: 0 4px 20px color-mix(in oklab, var(--color-foreground) 6%, transparent);
+}
+@supports (backdrop-filter: blur(10px)) {
+  .glass-header { backdrop-filter: blur(10px); }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+.animate-fade-in { animation: fadeIn 0.6s ease-out both; }
+.animate-float-slow { animation: float 12s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulseGlow 6s ease-in-out infinite; }
+
+/* Hero typography in px for precision */
+.hero-title { font-size: 64px; line-height: 1.1; }
+@media (min-width: 768px) { .hero-title { font-size: 96px; } }
+.hero-text { font-size: 20px; }
+@media (min-width: 768px) { .hero-text { font-size: 22px; } }
+
+/* Stagger utility for entrance animations */
+.stagger > * { opacity: 0; animation: fadeInUp 700ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.stagger > *:nth-child(1) { animation-delay: 60ms; }
+.stagger > *:nth-child(2) { animation-delay: 140ms; }
+.stagger > *:nth-child(3) { animation-delay: 220ms; }
+.stagger > *:nth-child(4) { animation-delay: 300ms; }
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .stagger > * {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
