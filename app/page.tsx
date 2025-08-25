@@ -38,7 +38,7 @@ export default function Home() {
                   <span>{s.title}</span>
                 </Link>
               ))}
-              <ArrowLink href="/services" className="group">
+              <ArrowLink href="/services" className="group text-sm">
                 All services
               </ArrowLink>
             </div>
