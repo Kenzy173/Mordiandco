@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ServiceIcon from "@/components/ServiceIcon";
 import PageHero from "@/components/PageHero";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
 	title: "Our Services",
@@ -25,6 +26,7 @@ export default function ServicesPage() {
 			<PageHero title="Our Services" subtitle="Explore our practice areas and how we can help" />
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+					<ScrollReveal>
 					<div className="mt-2 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 						{services.map((s) => (
 							<Link key={s.slug} href={`/services/${s.slug}`} className="card card-hover">
@@ -37,6 +39,7 @@ export default function ServicesPage() {
 							</Link>
 						))}
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		</>

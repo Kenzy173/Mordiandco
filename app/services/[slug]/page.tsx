@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
+import ScrollReveal from "@/components/ScrollReveal";
 import type { ReactElement } from "react";
 
 type Service = {
@@ -97,6 +98,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Criminal Law</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">Our criminal solicitors have been providing our clients with legal defence in the UK for several years, and have acted in some landmark cases in the UK.</p>
 						<p className="muted">We have specialisations in all areas of criminal law, from minor offences to serious crimes such as murder, fraud and conspiracies. We can offer representation to our clients from Police Station arrests, Court appearances, Appeals and Prison law. We cover cases throughout London and all of the UK on serious matters.</p>
@@ -116,6 +118,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 							<p className="text-sm">Having an emergency? <span className="font-semibold">24 Hour Emergency Line:</span> <a href="tel:07956923482" className="underline">07956 923 482</a></p>
 						</div>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -123,6 +126,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Commercial Law</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">Our seasoned Commercial law team at Mordi & Co Solicitors, advises business owners, directors, clients and customers on nearly every aspect of business and commerce. From structural and ownership matters to warranties, commercial fraud and asset recovery. We advise corporate and individual clients on the most suitable and cost-effective strategy and tactics to achieve their goals and safeguard their businesses, assets and reputations.</p>
 						<p className="muted">We provide expert legal services tailored to your business needs. From contracts to dispute resolution, we ensure your interests are protected and your transactions run smoothly. We provide a dedicated service for the commercial client advising on commercial agreements including:</p>
@@ -135,6 +139,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 							<li className="muted">Arbitration & Mediation</li>
 						</ul>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -142,6 +147,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Immigration & Nationality Law</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">We are specialists in all aspects of UK immigration and will therefore be able to ensure the whole process runs smoothly for you. We offer clients a personal and comprehensive solution to their immigration and British nationality needs.</p>
 						<p className="muted">With the benefit of our extensive experience, we are able to understand your needs and advise on the prospects of success and potential pitfalls in pursuing an application. Working together, we will use our experience to find a solution that matches your needs wherever possible.</p>
@@ -158,6 +164,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 							<li className="muted">General Immigration Advice</li>
 						</ul>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -165,11 +172,13 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Property & Conveyancing</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">Buying or selling a property can be a confusing and sometimes frustrating process. However, some people complain that lawyers do not take the time to explain the purpose of delays etc. At Mordi & Co, we believe that a client who understands the process is more likely to be a satisfied client.</p>
 						<p className="muted">Many people who find solicitors on the internet are attracted by promises of cheap fees and high levels of customer service, only to find that the small print nearly triples the &ldquo;fee&rdquo; they have been quoted, and that the &ldquo;customer service&rdquo; they have been promised is a little more than a call centre conveyer belt. Lawyers should be seen as professionals and integrity should be more important than marketing tricks.</p>
 						<p className="muted">We will always be competitive on price, and we pride ourselves on not being a conveyer belt operation. We are a real law firm, with lawyers, not call centres. We provide a service which concentrates on price and value and endeavour to explain all charges at the outset. We have clients throughout England and Wales.</p>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -177,11 +186,13 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Wills & Probate</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">We believe that every client of ours should have made a Will. It is one of the most important things in putting your affairs in order. Without a Will, the law will decide what happens to your money and home when you die. There can be some unpleasant surprises when this happens.</p>
 						<p className="muted">When a person dies, their assets must be valued and collected and their liabilities and taxes assessed and paid. The person responsible for this is the Executor appointed by the Will, or the Administrator when there is no Will. It can be a simple matter when there are few assets and no tax to pay. In other cases, it can become extremely involved.</p>
 						<p className="muted">We recognise that this can be a major worry at a sad and stressful time for the family of the deceased and we strive to be sympathetic and understanding: we believe we can often relieve the family of a great deal of worry.</p>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -189,6 +200,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Civil Litigation</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">Dealing with a dispute, whether it’s small or large, can be a particularly stressful experience, especially if you are unsure about the costs and procedures involved. Our litigation team regularly handle a wide range of disputes and we can provide practical and specialist advice with the aim of resolving your dispute quickly and cost-effectively. The clear and concise advice of our litigation solicitors is aimed at reducing unnecessary stress and worry. If we believe we can resolve your dispute through mediation, we will tell you.</p>
 						<p className="muted">Our litigation solicitors have covered a range of Civil, County and High Court legal disputes and defences. Our supportive, flexible and cost effective approach means we can adapt to the individual needs of our clients, seeking swift and positive resolutions. We will never risk a speculative action that has little chance of success. Our advice to you will be objective and even-handed, enabling you to make a fully informed decision.</p>
@@ -204,6 +216,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 							<li className="muted">Commercial debt recovery</li>
 						</ul>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -211,6 +224,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Family Law</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">The breakdown of a relationship can be one of the most traumatic periods of anyone&rsquo;s life. Naturally, you will be concerned about your current financial and property arrangements and how it will affect any children you may have. Our Family law solicitors specialise in advising and representing clients in divorce cases.</p>
 						<h3 className="text-xl font-semibold tracking-tight mt-4">Grounds for divorce</h3>
@@ -226,6 +240,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 						<h3 className="text-xl font-semibold tracking-tight mt-4">Divorce Petition</h3>
 						<p className="muted">If you are applying for the divorce we will usually start the process by writing a letter to your husband or wife to tell them that you are planning to start divorce action and recommend that they get independent legal advice. We will then send a divorce petition to the court. The court will send a copy to your spouse or their solicitor to reply within seven days. Once they have replied to the petition, you will confirm your intention to go ahead by a sworn statement or &lsquo;affidavit&rsquo;. Your application is then lodged with the court with the original marriage certificate and the court fee which is presently £300.</p>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),
@@ -233,6 +248,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 			<section>
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 					<h1 className="text-3xl font-semibold tracking-tight">Oil & Gas</h1>
+					<ScrollReveal>
 					<div className="mt-4 space-y-4">
 						<p className="muted">At Mordi & Co, our Oil & Gas team provides comprehensive legal services tailored to the dynamic energy sector. We partner closely with our clients to navigate the complex regulatory landscape and capitalize on opportunities. Our lawyers bring extensive experience advising on upstream oil and gas projects, from exploration and production agreements to joint venture formations and financing.</p>
 						<p className="muted">We guide clients through midstream and downstream transactions involving transportation, storage, refining and marketing of oil, gas and petroleum products. Our expertise spans energy sector regulations, operational agreements, environmental compliance, tax issues and dispute resolution.</p>
@@ -253,6 +269,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 							<li className="muted">Due Diligence</li>
 						</ul>
 					</div>
+					</ScrollReveal>
 				</div>
 			</section>
 		),

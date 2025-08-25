@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 // @ts-nocheck
+import ScrollReveal from "@/components/ScrollReveal";
 export const metadata = {
 	title: "Contact",
 	description: "Get in touch with Mordi & Co Solicitors.",
@@ -14,12 +15,14 @@ export default function ContactPage() {
 				<div>
 					<h1 className="text-4xl font-semibold tracking-tight">Do you need help?</h1>
 					<p className="mt-3 muted">We are here to help. Reach us via phone, email, or the quick message form.</p>
+					<ScrollReveal>
 					<ul className="mt-6 space-y-2 text-sm">
 						<li>Tel: (020) 7619 9666</li>
 						<li>Fax: (020) 8275 0594</li>
 						<li>Email: info@mordiandco.com</li>
 						<li>Address: Ground Floor Rear, 143 High Street, Barnet, EN5 5UZ</li>
 					</ul>
+					</ScrollReveal>
 					<div className="mt-6 flex items-center gap-3">
 						<a aria-label="LinkedIn" href="#" className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/5">
 							<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="opacity-80"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.98h5V24H0V8.98zM8.98 8.98H14v2.05h.07c.7-1.33 2.4-2.73 4.93-2.73 5.27 0 6.24 3.47 6.24 7.98V24h-5v-6.62c0-1.58-.03-3.62-2.2-3.62-2.2 0-2.54 1.72-2.54 3.5V24h-5V8.98z"/></svg>
@@ -35,6 +38,7 @@ export default function ContactPage() {
 						</a>
 					</div>
 				</div>
+				<ScrollReveal>
 				<form className="card grid gap-4" action="#" method="post">
 					<div>
 						<label className="block text-sm font-medium">Name</label>
@@ -56,6 +60,7 @@ export default function ContactPage() {
 					</div>
 					<button className="btn btn-primary" type="submit">Send message</button>
 				</form>
+				</ScrollReveal>
 			</div>
 			</section>
 			<section>
