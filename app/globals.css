@@ -169,7 +169,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.35; }
 .animate-pulse-glow { animation: pulseGlow 6s ease-in-out infinite; }
 
 /* Hero typography: responsive for mobile fit */
-.hero-title { font-size: clamp(40px, 12vw, 56px); line-height: 1.1; word-break: break-word; }
+.hero-title { font-size: clamp(36px, 10.5vw, 56px); line-height: 1.1; word-break: break-word; }
 @media (min-width: 768px) { .hero-title { font-size: clamp(64px, 8vw, 96px); } }
 .hero-text { font-size: 20px; }
 @media (min-width: 768px) { .hero-text { font-size: 22px; } }

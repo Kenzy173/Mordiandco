@@ -27,10 +27,10 @@ export default function AnimatedHero() {
         <div className="absolute -left-40 top-40 h-80 w-80 rounded-full animate-float-slow" style={{ background: "radial-gradient(closest-side, var(--color-accent), transparent)", animationDelay: "-3s" }} />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-56 grid gap-10 md:grid-cols-2 items-center justify-items-center md:justify-items-start">
-        <div className="text-center md:text-left mx-auto">
+        <div className="text-center md:text-left mx-auto relative z-10">
           <h1 className="hero-title font-black tracking-tight mt-2 text-[color:var(--color-foreground)] md:whitespace-nowrap">MORDI & CO</h1>
           <p className="hero-sub mt-2 text-lg sm:text-2xl font-semibold text-[color:var(--color-brand)] uppercase tracking-[0.3em] md:tracking-[0.6em]">Solicitors</p>
-          <div className="hero-ctas mt-8 flex gap-4 justify-center md:justify-start">
+          <div className="hero-ctas mt-8 flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
             <Link href="/contact" className="btn btn-primary">Do you need help?</Link>
             <Link href="/services" className="btn btn-outline">Explore our services</Link>
           </div>
