@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import SiteCTA from "@/components/SiteCTA";
 import Footer from "@/components/Footer";
+import RouteTransition from "@/components/RouteTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,7 +60,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${montserrat.variable} antialiased`}>
         <Header />
-        <main className="min-h-[60vh]">{children}</main>
+        <main className="min-h-[60vh]">
+          <RouteTransition>
+            {children}
+          </RouteTransition>
+        </main>
         <SiteCTA />
         <Footer />
       </body>

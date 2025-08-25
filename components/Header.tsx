@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href || pathname?.startsWith(href + "/");
 
 	return (
 		<header className="sticky top-0 z-50 glass-header">
@@ -18,9 +21,9 @@ export default function Header() {
 						</Link>
 					</div>
 					<nav className="hidden md:flex items-center gap-6 text-base font-medium">
-						<Link href="/" className="hover:opacity-80">Home</Link>
+						<Link href="/" className={`hover:opacity-80 ${isActive("/") ? "opacity-100 underline underline-offset-4" : "opacity-90"}`}>Home</Link>
 						<div className="relative group">
-							<Link href="/services" className="hover:opacity-80 inline-flex items-center gap-1">
+							<Link href="/services" className={`hover:opacity-80 inline-flex items-center gap-1 ${isActive("/services") ? "opacity-100 underline underline-offset-4" : "opacity-90"}`}>
 								<span>Our Services</span>
 								<svg aria-hidden width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:rotate-180">
 									<polyline points="6 9 12 15 18 9"></polyline>
@@ -41,9 +44,9 @@ export default function Header() {
 								</div>
 							</div>
 						</div>
-						<Link href="/about" className="hover:opacity-80">About us</Link>
-						<Link href="/team" className="hover:opacity-80">Our Team</Link>
-						<Link href="/contact" className="hover:opacity-80">Contact</Link>
+						<Link href="/about" className={`hover:opacity-80 ${isActive("/about") ? "opacity-100 underline underline-offset-4" : "opacity-90"}`}>About us</Link>
+						<Link href="/team" className={`hover:opacity-80 ${isActive("/team") ? "opacity-100 underline underline-offset-4" : "opacity-90"}`}>Our Team</Link>
+						<Link href="/contact" className={`hover:opacity-80 ${isActive("/contact") ? "opacity-100 underline underline-offset-4" : "opacity-90"}`}>Contact</Link>
 						<Link href="/contact" className="ml-2 btn btn-primary">Do you need help?</Link>
 						<div className="ml-2"><ThemeToggle /></div>
 					</nav>
