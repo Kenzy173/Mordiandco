@@ -62,9 +62,11 @@ export default function ContactPage() {
 				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
 					<div className="rounded-2xl overflow-hidden border border-black/10 dark:border-white/15">
 						<iframe
-							className="w-full h-72 md:h-96"
-							loading="lazy"
+							className="w-full h-[320px] sm:h-80 md:h-96 block"
+							loading="eager"
 							allowFullScreen
+							title="Mordi & Co Solicitors - Map"
+							referrerPolicy="no-referrer-when-downgrade"
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.831521789595!2d-0.207!3d51.588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761c8b4c7b9a1f%3A0x0000000000000000!2s143%20High%20St%2C%20Barnet%20EN5%205UZ%2C%20UK!5e0!3m2!1sen!2suk!4v1700000000000"
 						></iframe>
 					</div>
