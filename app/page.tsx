@@ -30,7 +30,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex gap-4 justify-center md:justify-start animate-fade-in-up">
               <Link href="/contact" className="btn btn-primary">Do you need help?</Link>
-              <Link href="#services" className="btn btn-outline">Explore our services</Link>
+              <Link href="/services" className="btn btn-outline">Explore our services</Link>
             </div>
           </div>
           <div className="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden border border-black/10 dark:border-white/15 animate-fade-in-up">
