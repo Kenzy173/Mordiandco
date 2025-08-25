@@ -38,7 +38,7 @@ export default function Home() {
                 </Link>
               ))}
               <Link href="/services" className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold bg-[color:var(--color-foreground)] text-[color:var(--color-background)] hover:opacity-90">
-                <span>All services -&gt;</span>
+                <span>All services</span>
               </Link>
             </div>
           </ScrollReveal>
