@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useLayoutEffect } from "react";
 import { gsap } from "./useGsap";
 import { useGsapRef } from "./useGsap";
+import Parallax from "./Parallax";
 
 export default function AnimatedHero() {
   const rootRef = useGsapRef<HTMLDivElement>();
@@ -23,8 +24,12 @@ export default function AnimatedHero() {
   return (
     <section className="relative isolate overflow-hidden animate-fade-in" ref={rootRef}>
       <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden>
-        <div className="absolute -right-40 -top-40 h-80 w-80 rounded-full animate-float-slow animate-pulse-glow" style={{ background: "radial-gradient(closest-side, var(--color-brand), transparent)" }} />
-        <div className="absolute -left-40 top-40 h-80 w-80 rounded-full animate-float-slow" style={{ background: "radial-gradient(closest-side, var(--color-accent), transparent)", animationDelay: "-3s" }} />
+        <Parallax amount={100} className="absolute -right-40 -top-40">
+          <div className="h-80 w-80 rounded-full animate-float-slow animate-pulse-glow" style={{ background: "radial-gradient(closest-side, var(--color-brand), transparent)" }} />
+        </Parallax>
+        <Parallax amount={80} invert className="absolute -left-40 top-40">
+          <div className="h-80 w-80 rounded-full animate-float-slow" style={{ background: "radial-gradient(closest-side, var(--color-accent), transparent)", animationDelay: "-3s" }} />
+        </Parallax>
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-56 grid gap-10 md:grid-cols-2 items-center justify-items-center md:justify-items-start">
         <div className="text-center md:text-left mx-auto relative z-10">
@@ -35,9 +40,9 @@ export default function AnimatedHero() {
             <Link href="/services" className="btn btn-outline">Explore our services</Link>
           </div>
         </div>
-        <div className="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden border border-black/10 dark:border-white/15">
+        <Parallax amount={40} className="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden border border-black/10 dark:border-white/15">
           <Image src={`https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop`} alt="Law firm meeting" fill className="object-cover" priority />
-        </div>
+        </Parallax>
       </div>
     </section>
   );
